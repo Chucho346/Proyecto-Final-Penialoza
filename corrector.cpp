@@ -1,13 +1,3 @@
-/*****************************************************************************************************************
-	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO
-	FACULTAD DE ESTUDIOS SUPERIORES -ARAGON-
-
-	Computadoras y programacion.
-	(c) 
-	Quiso decir: Programa principal de la aplicacion de la distancia de Levenstein.
-
-******************************************************************************************************************/
-
 
 #include "stdafx.h"
 #include <string.h>
@@ -17,14 +7,7 @@
 #define LONGITUD 32
 char abecedario[LONGITUD + 6] = "abcdefghijklmnñopqrstuvwxyzáéíóú";
 
-//Funciones publicas del proyecto
-/*****************************************************************************************************************
-	DICCIONARIO: Esta funcion crea el diccionario completo
-	char *	szNombre				:	Nombre del archivo de donde se sacaran las palabras del diccionario
-	char	szPalabras[][TAMTOKEN]	:	Arreglo con las palabras completas del diccionario
-	int		iEstadisticas[]			:	Arreglo con el numero de veces que aparecen las palabras en el diccionario
-	int &	iNumElementos			:	Numero de elementos en el diccionario
-******************************************************************************************************************/
+
 void Diccionario(char* szNombre, char szPalabras[][TAMTOKEN], int iEstadisticas[], int& iNumElementos)
 {
 	/* Variable de archivo*/
@@ -116,12 +99,9 @@ void Diccionario(char* szNombre, char szPalabras[][TAMTOKEN], int iEstadisticas[
 	}
 }
 
-/*****************************************************************************************************************
+
 	ClonaPalabras: toma una palabra y obtiene todas las combinaciones y permutaciones requeridas por el metodo
-	char *	szPalabraLeida,						//Palabra a clonar   palabra
-	char	szPalabrasSugeridas[][TAMTOKEN], 	//Lista de palabras clonadas
-	int &	iNumSugeridas)						//Numero de elementos en la lista
-******************************************************************************************************************/
+	char *	sz
 void	ClonaPalabras(
 	char* szPalabraLeida,						// Palabra a clonar
 	char  szPalabrasSugeridas[][TAMTOKEN], 	    //Lista de palabras clonadas
@@ -254,18 +234,7 @@ void	ListaCandidatas(
 	}
 	/*Comprobar con Numero de elementos en la szListaFinal*/
 	//Numero de elementos en la lista de opciones.
-	for (int i = 0; i < iNumLista; i++) {
-		for (int j = 0; j < iNumLista - 1; j++) {
-			/*Asignar la condicion*/
-			if (iPeso[j] < iPeso[j + 1]) {
-				/*Variables para el metodo de las candidatas*/
-				int iaux; char caux[50];
-				strcpy_s(caux, szListaFinal[j + 1]); iaux = iPeso[j + 1];
-				strcpy_s(szListaFinal[j + 1], szListaFinal[j]); iPeso[j + 1] = iPeso[j];
-				strcpy_s(szListaFinal[j], caux); iPeso[j] = iaux;
-			}
-		}
-	}
+	
 }
 
 
